@@ -5,7 +5,8 @@
                 data: $('form').serialize(),
                 type: 'POST',
                 success: function(response) {
-                    var json = jQuery.parseJSON(response)
+                    $("#movie_table").find("tr:gt(0)").remove();
+                    var json = jQuery.parseJSON(response);
                     var movie_data = '';
                     $.each(json.movies, function(key, value) {
                         movie_data += '<tr>';
