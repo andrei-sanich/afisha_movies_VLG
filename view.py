@@ -3,7 +3,7 @@ from flask import render_template, request, json
 
 
 from parse_list import parse_list
-from models import Moviea
+from models import Movieaaa
 
 
 @app.route('/')
@@ -23,5 +23,8 @@ def get_movies():
     all_movies = Movieaaa.query.all()
     find_movies = [movie for movie in all_movies if set(genres).issubset(set(parse_list(movie.genres)))]
     result = [res.to_json() for res in find_movies]
-    
     return json.dumps({'movies': result})
+
+@app.route('/analytics')
+def analytics():
+    return render_template('analytics.html')

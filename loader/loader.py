@@ -31,7 +31,7 @@ def data_refreshing():
     new_urls = [url for url in urls_from_kinopoisk if url not in urls_from_mybase]
 
     for url in new_urls[:3]:
-        movies.append(WebSource(url).get_info_about_movie(url)qex)
+        movies.append(WebSource(url).get_info_about_movie(url))
 
     MovieBase().add_movies(movies)
 
