@@ -10,14 +10,13 @@
                      $.each(json.movies, function(key, value) {
                         movie_data += '<tr>';
                         movie_data += '<td>'+value.name_eng+'</td>';
-                        movie_data += '<td>'+value.name_rus+'</td>';
+                        movie_data += '<td><a href='+value.url+'data-popup-info="enabled">'+value.name_rus+'</a></td>';
                         movie_data += '<td>'+value.year+'</td>';
                         movie_data += '<td>'+value.genres.slice(1, -1)+'</td>';
                         movie_data += '<td>'+value.countries.slice(1, -1)+'</td>';
                         movie_data += '<td>'+value.directors.replace(/[{}""]/g, "")+'</td>';
                         movie_data += '<td>'+value.writers.replace(/[{}""]/g, "")+'</td>';
                         movie_data += '<td>'+value.rus_prem+'</td>';
-                        movie_data += '<td><a href='+value.url+'data-popup-info="enabled">Go to Kinopoisk.ru</a></td>';
                         movie_data += '</tr>';
 
                     
