@@ -19,8 +19,7 @@ def index():
 @app.route('/get_movies', methods=['GET', 'POST'])
 def get_movies():
     genres = request.form.getlist('genres')
-    all_movies = Movie.query.all()
-    find_movies = [movie for movie in all_movies if set(genres).issubset(set(parse_list(movie.genres)))]
+    find_movies = [movie for movie in Movie.query.all() if set(genres).issubset(set(parse_list(movie.genres)))]
     result = [res.to_json() for res in find_movies]
     return json.dumps({'movies': result})
 
